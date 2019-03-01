@@ -1,5 +1,5 @@
-# ADCoin
-基于ERC20的ADC代币智能合约发布到geth客户端搭建的以太坊私链中并基于web3j提供Java API给平台调用
+# QtvToken
+基于ERC20的QtvToken代币智能合约发布到geth客户端搭建的以太坊私链中并基于web3j提供Java API给平台调用
 
 主要负责广告投放平台的区块链技术模块研发，自主基于以太坊平台搭链
 
