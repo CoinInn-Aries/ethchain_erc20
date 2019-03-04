@@ -56,9 +56,7 @@ public class GomoCoinSDK {
         /*String account = web3.ethAccounts().send().getAccounts().get(0);
         Credentials credentials = WalletUtils.loadCredentials(password, keyPath);*/
         // qtv
-        //Credentials credentials = Credentials.create("0x95CF4B99E8D34A8DB92B2507825E447EDD2E57918D375727BBFAF5F5A3B884DA");//解锁账户
-        // ftn
-        Credentials credentials = Credentials.create("0xBE830EEE49CE07F7D08F3EBAC0D2E1AAD4FFD348BD279DE43B7B1EE72CBD39E5");//解锁账户
+        Credentials credentials = Credentials.create("0x95CF4B99E8D34A8DB92B2507825E447EDD2E57918D375727BBFAF5F5A3B884DA");//解锁账户
 
         //Gomo
         /*__GomoCoin_sol_GomoToken contract = __GomoCoin_sol_GomoToken
@@ -96,7 +94,7 @@ public class GomoCoinSDK {
     public static String transferFrom(String accountFrom, String accountTo, String number, String password, String keyPath) throws Exception {
         String transactionHash = "";
         //Credentials credentials = WalletUtils.loadCredentials(password, keyPath);//解锁账户
-        Credentials credentials = Credentials.create("0xBE830EEE49CE07F7D08F3EBAC0D2E1AAD4FFD348BD279DE43B7B1EE72CBD39E5");//解锁账户
+        Credentials credentials = Credentials.create("0x95CF4B99E8D34A8DB92B2507825E447EDD2E57918D375727BBFAF5F5A3B884DA");//解锁账户
         __GomoCoin_sol_GomoToken ct = __GomoCoin_sol_GomoToken
                 .load(GomoTokenAddress, web3, credentials, GAS_PRICE, GAS_LIMIT);
         BigInteger value = Convert.toWei(number, Convert.Unit.ETHER).toBigInteger();
@@ -136,7 +134,7 @@ public class GomoCoinSDK {
     }
 
     public static BigInteger ftnBalanceOf(String account) throws Exception {
-        Credentials credentials = Credentials.create("0xBE830EEE49CE07F7D08F3EBAC0D2E1AAD4FFD348BD279DE43B7B1EE72CBD39E5");//解锁账户
+        Credentials credentials = Credentials.create("0x95CF4B99E8D34A8DB92B2507825E447EDD2E57918D375727BBFAF5F5A3B884DA");//解锁账户
         __Erc20_sol_FtnToken_new ct = __Erc20_sol_FtnToken_new.load("0x66d9c4D19b4C8e23a54C6dc4CeEd141f66b8111C", web3, credentials, GAS_PRICE, GAS_LIMIT);
         System.out.println(ct.isValid() + ct.getGasPrice().toString() + ct.getClass());
         BigInteger num = ct.balanceOf(account).send();
